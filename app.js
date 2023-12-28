@@ -1,21 +1,40 @@
-import axios from "axios";
-import express from "express";
 
 // initionalization
+const express = require('express');
+const mongoose = require('mongoose');
+
 const app = express();
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.json());
-app.set('view engin', 'ejs');
+app.use(express.urlencoded({ extended: true }));
+
+// DESIGN FILE
+app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 
+
 app.get('/', (req, res)=>{
-    res.send("Server is upp and running")
+    try {
+        res.status(200).render('index');
+    } catch (error) {
+        console.log(error)
+    }
 })
 
-app.listen(port, ()=>{
-    console.log(`Server is running in port: ${port}`)
-})
+// Connect to mongodb
+async function connectDb(){
+    try {
+        const res = await mongoose.connect('mongodb://0.0.0.0:27017/blogDb')
+        console.log("connected to db successfully")
+    app.listen(port, ()=>{ console.log(`Server is running in port: ${port}`)})
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+connectDb();

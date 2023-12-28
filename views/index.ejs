@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <%- include('partials/header'); -%>
+    </header>
+
+    <main class="px-12 py-12">
+        <div class="inner flex lg:flex-row justify-between  sm:flex-col-reverse lg:item-center">
+            <div class="content lg:w-1/2 sm:w-full">
+                <h1 class="text-4xl">Hi I am Ibifaa</h1>
+                <h1 class="text-4xl"> Front End Dev</h1>
+                <p class="text-2xl">Join me as we unravle the integrity of front end development. For infomation on
+                    framework
+                    and tutorial
+                </p>
+            </div>
+
+            <div class="image-section lg:w-1/2 sm:w-full">
+                <img class="object-scale-down lg:w-full sm:w-full" src="/images/Code typing-cuate.svg" alt="">
+            </div>
+
+        </div>
+
+        <button class="bg-[#6246EA] text-white px-[15px] py-2 text-xl rounded-2xl">View Post </button>
+
+
+    </main>
+
+    <footer class="p-6 text-xs">
+        <%- include('partials/footer'); -%>
+    </footer>
+
+</body>
+
+</html>
