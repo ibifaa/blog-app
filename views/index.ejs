@@ -8,37 +8,43 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
-    <header>
-        <%- include('partials/header'); -%>
-    </header>
+<body class="bg-gradient-to-r from-[#90CAF9] from-10% to-[#2B2D2F] to-90% flex justify-center">
+    <div class="container m-10 mx-auto bg-white w-65 content-center">
+        <header>
+            <%- include('partials/header'); -%>
+        </header>
 
-    <main class="px-12 py-12">
-        <div class="inner flex lg:flex-row justify-between  sm:flex-col-reverse lg:item-center">
-            <div class="content lg:w-1/2 sm:w-full">
-                <h1 class="text-4xl">Hi I am Ibifaa</h1>
-                <h1 class="text-4xl"> Front End Dev</h1>
-                <p class="text-2xl">Join me as we unravle the integrity of front end development. For infomation on
-                    framework
-                    and tutorial
-                </p>
+        <main class=" pt-12 px-12">
+            <div class="inner flex lg:flex-row justify-between  sm:flex-col-reverse lg:item-center">
+                <div class="content lg:w-1/2 sm:w-full self-center">
+                    <h1 class="text-4xl text-gradient-to-r from-[#90CAF9] from-10% to-[#2B2D2F] to-90%">Hi I am Ibifaa
+                    </h1>
+                    <h1 class="text-4xl mb-[20px] text-gradient-to-r from-[#90CAF9] from-10% to-[#2B2D2F] to-90%"> Front
+                        End Dev</h1>
+                    <p class="text-2xl mb-[20px]">Join me as we unravel the nitty-gritty of front end development, its
+                        concept, framework, tricks and tutorials.
+
+                    </p>
+                    <button
+                        class="bg-[#2B2D2F] text-white px-[30px] py-2 text-xl rounded-xl hover:bg-gray-200 hover:text-black hover:border-4">View
+                        A Post </button>
+                </div>
+
+                <div class="image-section lg:w-1/2 sm:w-full">
+                    <img class="object-cover lg:w-full sm:w-full" src="/images/Code typing-cuate.svg" alt="">
+                </div>
+
             </div>
 
-            <div class="image-section lg:w-1/2 sm:w-full">
-                <img class="object-scale-down lg:w-full sm:w-full" src="/images/Code typing-cuate.svg" alt="">
-            </div>
-
-        </div>
-
-        <button class="bg-[#6246EA] text-white px-[15px] py-2 text-xl rounded-2xl">View Post </button>
 
 
-    </main>
 
-    <footer class="p-6 text-xs">
-        <%- include('partials/footer'); -%>
-    </footer>
+        </main>
 
+        <footer class="text-xs">
+            <%- include('partials/footer'); -%>
+        </footer>
+    </div>
 </body>
 
 </html>
