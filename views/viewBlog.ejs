@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="">
+    <header>
+        <%- include('partials/header'); -%>
+    </header>
+    <main>
+        <h2>Blogs</h2>
+        <div class="container">
+
+        </div>
+        <% blogs.forEach(blog=>{ %>
+            <div class="text-xl bg-gradient-to-r from-[#90CAF9] from-10% to-[#2B2D2F] to-90%">
+                <h3> <a href="/view-single-blog/<%=blog._id%>">
+                        <%=blog.name %>
+                    </a></h3>
+                <h3>
+                    <%= blog.email %>
+                </h3>
+                <h3>
+                    <%= blog.subject %>
+                </h3>
+                <p>
+                    <%= blog.message %>
+                </p>
+            </div>
+            <a href="/update-blog/<%=blog._id%>">Edit/UpdateBlog</a>
+            <!-- <a class="deleteBtn" href="/delete-blog/<%=blog._id%>">delete Blog</a>
+            -->
+
+            <a href="" class="deleteBtn" data-delete="<%=blog._id%>">
+                delete Blog
+            </a>
+
+            <% }) %>
+
+    </main>
+
+
+    <footer class="text-xs">
+        <%- include('partials/footer'); -%>
+    </footer>
+
+
+    <script>
+        const deleteBtn = document.querySelector('.deleteBtn');
+        deleteBtn.addEventListener('click', (e) => {
+            fetch(`/delete-blog/${deleteBtn.dataset.delete}`, {
+                method: "DELETE"
+            })
+                .then(response => {
+                    response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    window.location.href = data.message.redirect;
+                })
+        })
+    </script>
+</body>
+
+</html>

@@ -12,22 +12,22 @@
     <div class="contaier flex">
 
         <div class="form-section w-1/2 m-4">
-            <form action="">
+            <form action="/write-blog" method="post">
                 <div>
                     <div class="border-4 m-4 p-3 rounded-xl">
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Name" name="name">
                     </div>
                     <div class="border-4 m-4 m-4 p-3 rounded-xl">
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Email" name="email">
                     </div>
                 </div>
 
                 <div class="border-4 m-4 m-4 p-3 rounded-xl">
-                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Subject" name="subject">
                 </div>
 
                 <div class="border-4 m-4 m-4 p-3 rounded-xl">
-                    <textarea name="message" id="" cols="30" rows="10">Message</textarea>
+                    <textarea name="message" id="" cols="30" rows="10" name="message">Message</textarea>
                 </div>
                 <input class="border-4" type="submit" value="Post Blog">
 
